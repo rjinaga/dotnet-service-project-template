@@ -1,5 +1,5 @@
 # dotnet-service-project-template
-.NET project structure/template to create well maintainable and scalable microservice.
+.NET project structure/template to create well maintainable, clean and scalable microservice.
 
 This project structure is built using following princples:
 Dependency Inversion,
@@ -86,3 +86,35 @@ public class CustomerQueryHandler : IQueryHandlerAsync<GetCustomerQuery, Custome
 }
 ```
 
+#### Invoke Command/Query
+
+```csharp
+public class CustomerController : ControllerBase
+{
+    readonly IDispatcher _dispatcher;
+    public CustomerController(IDispatcher dispatcher)
+    {
+        _dispatcher = dispatcher;
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> Get(int customerId)
+    {
+        GetCustomerQuery query = new (customerId);
+        Customer customer = await _dispatcher.DispatchAsync(query);
+
+        return Ok(customer);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Create(Customer customer)   
+    {
+        CustomerCommand command = new(customer);
+        int id = await _dispatcher.DispatchAsync(command);
+
+        return Created("", id);
+    }
+}
+```
+
+#### Container Setup
