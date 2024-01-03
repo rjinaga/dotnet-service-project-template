@@ -18,6 +18,8 @@ Use command handler to perform an action and query handler for retrieving data.
 
 #### Command
 ```csharp
+namespace MyService.Abstractions.Cqs.CustomerService;
+
 public record CustomerCommand (Customer Customer) : ICommand<int>
 {
     
@@ -26,6 +28,8 @@ public record CustomerCommand (Customer Customer) : ICommand<int>
 
 #### Command Handler
 ```csharp
+namespace MyService.Services.CustomerService;
+
 [Service]
 public class CustomerCommandHandler : ICommandHandlerAsync<CustomerCommand, int>
 {
@@ -50,6 +54,8 @@ public class CustomerCommandHandler : ICommandHandlerAsync<CustomerCommand, int>
 
 #### Event
 ```csharp
+namespace MyService.Abstractions.Cqs.CustomerService;
+
 public record CustomerCreatedEvent(Customer Arg) : IEvent<Customer>
 {
 }
@@ -57,6 +63,8 @@ public record CustomerCreatedEvent(Customer Arg) : IEvent<Customer>
 
 #### Event Handler
 ```csharp
+namespace MyService.Services.CustomerService;
+
 [Service]
 public class CustomerCreatedEventHandler : IEventHandlerAsync<CustomerCreatedEvent, Customer>
 {
@@ -69,6 +77,7 @@ public class CustomerCreatedEventHandler : IEventHandlerAsync<CustomerCreatedEve
 
 #### Query 
 ```csharp
+namespace MyService.Abstractions.Cqs.CustomerService;
 public record GetCustomerQuery(int CustomerId) : IQuery<Customer>
 {
 }
@@ -76,6 +85,8 @@ public record GetCustomerQuery(int CustomerId) : IQuery<Customer>
 
 #### Query Handler
 ```csharp
+namespace MyService.Services.CustomerService;
+
 [Service]
 public class CustomerQueryHandler : IQueryHandlerAsync<GetCustomerQuery, Customer>
 {
@@ -117,4 +128,8 @@ public class CustomerController : ControllerBase
 }
 ```
 
-#### Container Setup
+#### Container Setup (Check ContainerSetup.cs)
+TODO
+
+#### Further enhancement to the structure
+* Abstractions module can be seprated by its major folders like Abstractions.Cqs, Abstractions.Infrastructure, Abstractions.Repositories
