@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="293px" preserveAspectRatio="none" style="width:598px;height:293px;background:#FFFFFF;" version="1.1" viewBox="0 0 598 293" width="598px" zoomAndPan="magnify"><defs/><g><!--MD5=[b1125bb337ca8b65b670aff74d38c270]
+cluster Concrete Modules--><g id="cluster_Concrete Modules"><path d="M154,87.5 L285,87.5 A3.75,3.75 0 0 1 287.5,90 L294.5,111.1094 L589,111.1094 A2.5,2.5 0 0 1 591.5,113.6094 L591.5,185 A2.5,2.5 0 0 1 589,187.5 L154,187.5 A2.5,2.5 0 0 1 151.5,185 L151.5,90 A2.5,2.5 0 0 1 154,87.5 " fill="#EFF0BB" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="151.5" x2="294.5" y1="111.1094" y2="111.1094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="130" x="155.5" y="104.0332">Concrete Modules</text></g><!--MD5=[625fed884dd9f0f64d754593d4b59540]
+entity Infrastructure--><g id="elem_Infrastructure"><rect fill="#F1F1F1" height="47.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="124" x="451.5" y="123.5"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="555.5" y="128.5"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="553.5" y="130.5"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="553.5" y="134.5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="84" x="466.5" y="158.0332">Infrastructure</text></g><!--MD5=[ca90e29f08732e1f8975e741fe954bc8]
+entity Repositories--><g id="elem_Repositories"><rect fill="#F1F1F1" height="47.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="119" x="297" y="123.5"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="396" y="128.5"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="394" y="130.5"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="394" y="134.5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="79" x="312" y="158.0332">Repositories</text></g><!--MD5=[3ab6bc66408bc465e62c4c0dcccb802d]
+entity Services--><g id="elem_Services"><rect fill="#F1F1F1" height="47.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="94" x="167.5" y="123.5"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="241.5" y="128.5"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="239.5" y="130.5"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="239.5" y="134.5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="54" x="182.5" y="158.0332">Services</text></g><!--MD5=[e053fade58573b0583967b3cf217adb9]
+entity WebApi--><g id="elem_WebApi"><rect fill="#40DB96" height="65.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="125" x="7" y="115"/><rect fill="#40DB96" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="112" y="120"/><rect fill="#40DB96" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="110" y="122"/><rect fill="#40DB96" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="110" y="126"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="85" x="22" y="149.5332">«Controllers»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="54" x="37.5" y="167.1426">Web API</text></g><!--MD5=[369697cb8e95e437d349afb476c6440c]
+entity Host--><g id="elem_Host"><rect fill="#3C96C9" height="47.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="151" x="210" y="7"/><rect fill="#3C96C9" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="341" y="12"/><rect fill="#3C96C9" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="339" y="14"/><rect fill="#3C96C9" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="339" y="18"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="111" x="225" y="41.5332">Host Web Module</text></g><!--MD5=[07db1d14a93f26c552949450a1a794f9]
+entity Abstractions--><g id="elem_Abstractions"><rect fill="#F1F1F1" height="47.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="118" x="226.5" y="240"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="324.5" y="245"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="322.5" y="247"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="322.5" y="251"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="78" x="241.5" y="274.5332">Abstractions</text></g><!--MD5=[4325cd0478f1523f3a350922184df3d4]
+link Infrastructure to Abstractions--><g id="link_Infrastructure_Abstractions"><path d="M476.1,171.55 C462.82,179.45 447.65,188.14 433.5,195.5 C404.6,210.53 371.71,225.71 344.28,237.87 " fill="none" id="Infrastructure-to-Abstractions" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="339.57,239.94,349.4188,239.9715,344.1455,237.9239,346.1931,232.6506,339.57,239.94" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[9e4e72f419aa686b0c86ae1e631ad709]
+link Repositories to Abstractions--><g id="link_Repositories_Abstractions"><path d="M342.13,171.67 C330.68,190.14 314.61,216.05 302.52,235.55 " fill="none" id="Repositories-to-Abstractions" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="299.85,239.86,307.9953,234.3234,302.4872,235.612,301.1985,230.1039,299.85,239.86" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[953c103d10d899b685991f30580fc3d7]
+link Services to Abstractions--><g id="link_Services_Abstractions"><path d="M228.87,171.67 C240.32,190.14 256.39,216.05 268.48,235.55 " fill="none" id="Services-to-Abstractions" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="271.15,239.86,269.8015,230.1039,268.5128,235.612,263.0047,234.3234,271.15,239.86" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[c6132c0eeb858a5edd87058e551b7741]
+link WebApi to Abstractions--><g id="link_WebApi_Abstractions"><path d="M123.52,180.01 C132.81,185.27 142.4,190.6 151.5,195.5 C178.28,209.91 208.5,225.21 233.45,237.6 " fill="none" id="WebApi-to-Abstractions" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="238.05,239.87,231.7793,232.2754,233.575,237.6397,228.2107,239.4354,238.05,239.87" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[2bfc198fa1fd73fffc184aa5993bd922]
+link Host to WebApi--><g id="link_Host_WebApi"><path d="M209.78,53.74 C190.2,60.72 169.57,69.33 151.5,79.5 C135.82,88.33 120.15,100.2 106.76,111.5 " fill="none" id="Host-to-WebApi" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="102.68,114.98,112.1226,112.1804,106.4833,111.7343,106.9294,106.0951,102.68,114.98" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[ecaef27d9fdfacb920209452f1ba6b8e]
+link Host to Infrastructure--><g id="link_Host_Infrastructure"><path d="M361.22,50.16 C385.16,57.49 411.17,67.19 433.5,79.5 C452.93,90.21 472.08,106.01 486.77,119.58 " fill="none" id="Host-to-Infrastructure" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="490.79,123.34,486.9587,114.2669,487.1419,119.9208,481.488,120.1039,490.79,123.34" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[b3d0584f0e82b01555ad091e8b154e5d]
+link Host to Services--><g id="link_Host_Services"><path d="M271.13,55.17 C259.68,73.64 243.61,99.55 231.52,119.05 " fill="none" id="Host-to-Services" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="228.85,123.36,236.9953,117.8234,231.4872,119.112,230.1985,113.6039,228.85,123.36" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[2fc2be37bb510f8f5c5383ad92dcec6c]
+link Host to Repositories--><g id="link_Host_Repositories"><path d="M299.87,55.17 C311.32,73.64 327.39,99.55 339.48,119.05 " fill="none" id="Host-to-Repositories" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="342.15,123.36,340.8015,113.6039,339.5128,119.112,334.0047,117.8234,342.15,123.36" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[1a82de45fa6885f271c406a5a118b597]
+@startuml structure
+skinparam linetype polygon
+
+component [Web API] as WebApi << Controllers >> #40db96
+component "Host Web Module" as Host #3c96c9
+
+' #3c96c9
+
+[Abstractions] 
+
+package "Concrete Modules" #eff0bb {
+    [Infrastructure] - -> [Abstractions]
+    [Repositories] - -> [Abstractions]
+    [Services] - -> [Abstractions]
+}
+[WebApi] - -> [Abstractions]
+
+[Host] - -> [WebApi]
+[Host] - -> [Infrastructure]
+[Host] - -> [Services]
+[Host] - -> [Repositories]
+
+@enduml
+
+@startuml structure
+skinparam linetype polygon
+
+component [Web API] as WebApi << Controllers >> #40db96
+component "Host Web Module" as Host #3c96c9
+
+
+[Abstractions] 
+
+package "Concrete Modules" #eff0bb {
+    [Infrastructure] - -> [Abstractions]
+    [Repositories] - -> [Abstractions]
+    [Services] - -> [Abstractions]
+}
+[WebApi] - -> [Abstractions]
+
+[Host] - -> [WebApi]
+[Host] - -> [Infrastructure]
+[Host] - -> [Services]
+[Host] - -> [Repositories]
+
+@enduml
+
+PlantUML version 1.2022.7(Mon Aug 22 22:31:30 IST 2022)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: Cp1252
+Language: en
+Country: IN
+--></g></svg>
