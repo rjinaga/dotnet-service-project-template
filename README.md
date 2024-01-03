@@ -7,7 +7,7 @@ Single Responsibility,
 Interface Segregation,
 and Open Closed Principle
 
-![Project Dependency Hierarchy](https://raw.githubusercontent.com/rjinaga/dotnet-service-project-template/main/diagram.svg?token=GHSAT0AAAAAACMKIPHOVVXSKJ5TYHMR2KTEZMVKGWA)
+![Project Dependency Hierarchy](https://raw.githubusercontent.com/rjinaga/dotnet-service-project-template/main/diagram.svg)
 
 
 ## CQS Pattern
