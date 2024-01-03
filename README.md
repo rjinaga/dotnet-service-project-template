@@ -129,7 +129,11 @@ public class CustomerController : ControllerBase
 ```
 
 #### Container Setup (Check ContainerSetup.cs)
-TODO
+<< TODO >>
 
 #### Further enhancement to the structure
 * Abstractions module can be seprated by its major folders like Abstractions.Cqs, Abstractions.Infrastructure, Abstractions.Repositories
+
+#### Project Structure
+
+![Project Structure](https://raw.githubusercontent.com/rjinaga/dotnet-service-project-template/main/project-structure.png)
