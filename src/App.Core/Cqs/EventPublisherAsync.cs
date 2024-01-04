@@ -20,7 +20,6 @@ public class EventPublisherAsync : IEventPublisherAsync
         var type = typeof(IEventHandlerAsync<,>).MakeGenericType(@event.GetType(),  typeof(TArg));
         dynamic handler = _context.Resolve(type);
 
-        dynamic arg = @event;
-        var result = await handler.HandleAsync(arg);
+        await handler.HandleAsync(@event.Arg);
     }
 }
