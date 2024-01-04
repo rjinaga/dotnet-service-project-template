@@ -7,15 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Entities\" />
-    <Folder Include="Exceptions\" />
-    <Folder Include="Extensions\" />
-    <Folder Include="Infrastructure\" />
-    <Folder Include="Contracts\" />
-    <Folder Include="Repositories\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\App.Core\App.Core.csproj" />
   </ItemGroup>
 
