@@ -1,12 +1,13 @@
 ﻿
-using App.Core;
-using App.Core.Cqs;
+using System.Reflection;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using App.Core;
+using App.Core.Cqs;
 using MyService.Infrastructure;
 using MyService.Repository;
 using MyService.Services;
-using System.Reflection;
+
 
 internal static class ContainerSetup
 {
@@ -22,22 +23,21 @@ internal static class ContainerSetup
 
     private static void Config(ContainerBuilder builder, ConfigurationManager configuration)
     {
-        // Register services from different libraries
+        // :Register services from different assemblies
         RegisterAssembly(builder, typeof(ServicesModule).Assembly);
         RegisterAssembly(builder, typeof(RepositoriesModule).Assembly);
         RegisterAssembly(builder, typeof(InfrastructureModule).Assembly);
 
-        // Register CQS base classes
+        // :Register CQS driver classes
         builder.RegisterType<QueryDispatcherAsync>().As<IQueryDispatcherAsync>().SingleInstance();
         builder.RegisterType<CommandDispatcherAsync>().As<ICommandDispatcherAsync>().SingleInstance();
         builder.RegisterType<CqDispatcher>().As<IDispatcher>().SingleInstance();
         builder.RegisterType<EventPublisherAsync>().As<IEventPublisherAsync>().SingleInstance();
-
     }
 
     private static void RegisterAssembly(ContainerBuilder builder, Assembly assembly)
     {
-        // Register transient services
+        // :Register transient services
         builder.RegisterAssemblyTypes(assembly)
            .Where(t =>
            {
@@ -46,7 +46,7 @@ internal static class ContainerSetup
            })
            .AsImplementedInterfaces();
 
-        // Register singleton services
+        // :Register singleton services
         builder.RegisterAssemblyTypes(assembly)
            .Where(t =>
            {

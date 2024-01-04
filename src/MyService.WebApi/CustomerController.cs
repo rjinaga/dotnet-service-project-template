@@ -6,6 +6,9 @@ using MyService.Abstractions.Cqs.CustomerService;
 using MyService.Abstractions.Models;
 using System.Threading.Tasks;
 
+
+[ApiController]
+[Route("api/[controller]")]
 public class CustomerController : ControllerBase
 {
     readonly IDispatcher _dispatcher;

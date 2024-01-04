@@ -3,12 +3,11 @@
 WebApplication
   .CreateBuilder(args)
 
-  /* Setup DI provider, logger and services */
+  /* Setup DI provider, services and Build */
   .SetupAppAutofacContainer()
   .SetupAppServices()
-
   .Build()
 
-  /* Setup HTTP request pipeline */
-  .SetupAppHttpPipelineConfig()
+  /* Setup HTTP request pipeline and Run */
+  .SetupMiddlware()
   .Run();

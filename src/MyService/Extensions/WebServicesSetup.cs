@@ -10,9 +10,6 @@ internal static class WebServicesSetup
     /// <param name="builder"></param>
     internal static WebApplicationBuilder SetupAppServices(this WebApplicationBuilder builder)
     {
-        // set lower case URLs
-        builder.Services.AddRouting(option => option.LowercaseUrls= true );
-
         // Add controllers to the DI container
         builder.Services
             .AddControllers()
@@ -24,7 +21,6 @@ internal static class WebServicesSetup
 
         // Add CORS
         SetupCorsPolicy(builder);
-
         return builder;
     }
 
@@ -38,14 +34,11 @@ internal static class WebServicesSetup
         _ = builder.Services.AddCors(options =>
         {
             var hosts = builder.Configuration.GetValue<string[]>("AppCors");
-            if (hosts == null)
+            if (hosts is not null && hosts.Length > 0)
             {
-                // TODO: Logging
-                return;
-            }
-
-            options.AddDefaultPolicy(policy =>
+                options.AddDefaultPolicy(policy =>
                        policy.WithOrigins(origins: hosts));
+            }
         });
     }
 }
