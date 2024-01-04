@@ -1,11 +1,14 @@
 # dotnet-service-project-template
-.NET project structure/template to create well maintainable, clean and scalable microservice.
+.NET project structure or template to create well maintainable, clean and scalable microservice. This project structure uses only Autofac library (DI framework).
 
-This project structure is built using following princples:
-Dependency Inversion,
-Single Responsibility,
-Interface Segregation,
-and Open Closed Principle
+This project structure is built using following principles:
+* Dependency Inversion - High or low level modules don't depend on each other, all the concrete modules depend on abstraction module, and host module is responsible for assembling all the concrete modules.
+* Single Responsibility - This project structure uses Cqs pattern at its core, so individual actions or queries are clearly serrated by its functionality.
+* Interface Segregation - Command and query separation pattern allows to use the client specific interfaces.
+* Open Closed - Event publisher makes the command or query classes closed for modifications and open for extension by adding events.
+
+
+### Modules Dependency
 
 ![Project Dependency Hierarchy](https://raw.githubusercontent.com/rjinaga/dotnet-service-project-template/main/diagram.svg)
 
@@ -137,3 +140,14 @@ public class CustomerController : ControllerBase
 #### Project Structure
 
 ![Project Structure](https://raw.githubusercontent.com/rjinaga/dotnet-service-project-template/main/project-structure.png)
+
+
+#### Project Dependencies
+* ASP.NET Core 6.0
+* Autofac
+
+
+#### Roadmap
+* Create shell script to accepting few arguments to create a new project from this as a real template.
+* Make App.Core available as nuget library
+* Improve documentation
