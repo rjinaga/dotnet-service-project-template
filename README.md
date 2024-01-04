@@ -1,5 +1,5 @@
 # dotnet-service-project-template
-.NET project structure or template to create well maintainable, clean and scalable microservice. This project structure uses only Autofac library (DI framework).
+.NET project structure or template to create well maintainable, clean and scalable microservice. This project structure uses only Autofac library (DI framework). This project structure can be used by replacing your desired name for your service. In the future, a shell script will be included to rescue the manual name changes.
 
 This project structure is built using following principles:
 * Dependency Inversion - High or low level modules don't depend on each other, all the concrete modules depend on abstraction module, and host module is responsible for assembling all the concrete modules.
@@ -150,4 +150,5 @@ public class CustomerController : ControllerBase
 #### Roadmap
 * Create shell script to accepting few arguments to create a new project from this as a real template.
 * Make App.Core available as nuget library
+* Unit testing and integration testing
 * Improve documentation
