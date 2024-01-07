@@ -42,7 +42,7 @@ public class CustomerCommandHandler : ICommandHandlerAsync<CustomerCommand, int>
         _publisher = publisher;
     }
 
-    public async Task<int> HandleAsync(CustomerCommand command)
+    public async Task<int> HandleAsync(CustomerCommand command, CancellationToken token = default)
     {
         var customer = command.Customer;
 
@@ -71,7 +71,7 @@ namespace MyService.Services.CustomerService;
 [Service]
 public class CustomerCreatedEventHandler : IEventHandlerAsync<CustomerCreatedEvent, Customer>
 {
-    public Task HandleAsync(Customer arg)
+    public Task HandleAsync(Customer arg, CancellationToken token = default)
     {
         throw new NotImplementedException();
     }
@@ -93,7 +93,7 @@ namespace MyService.Services.CustomerService;
 [Service]
 public class CustomerQueryHandler : IQueryHandlerAsync<GetCustomerQuery, Customer>
 {
-    public Task<Customer> HandleAsync(GetCustomerQuery query)
+    public Task<Customer> HandleAsync(GetCustomerQuery query, CancellationToken token = default)
     {
         throw new NotImplementedException();
     }
