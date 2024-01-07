@@ -2,5 +2,5 @@
 
 public interface IEventPublisherAsync
 {
-    Task PublishAsync<T>(IEvent<T> @event) where T: class;
+    Task PublishAsync<T>(IEvent<T> @event, CancellationToken token=default) where T: class;
 }

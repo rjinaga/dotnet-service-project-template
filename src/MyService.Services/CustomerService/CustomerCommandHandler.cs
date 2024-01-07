@@ -15,7 +15,7 @@ public class CustomerCommandHandler : ICommandHandlerAsync<CustomerCommand, int>
         _publisher = publisher;
     }
 
-    public async Task<int> HandleAsync(CustomerCommand command)
+    public async Task<int> HandleAsync(CustomerCommand command, CancellationToken token = default)
     {
         var customer = command.Customer;
 

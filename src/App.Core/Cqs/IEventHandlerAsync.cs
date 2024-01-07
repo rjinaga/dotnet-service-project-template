@@ -6,5 +6,5 @@ public interface IEventHandlerAsync<TEvent, TArg>
     where TEvent : IEvent<TArg> 
     where TArg : class
 {
-    Task HandleAsync(TArg arg);
+    Task HandleAsync(TArg arg, CancellationToken token=default);
 }

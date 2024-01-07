@@ -2,6 +2,7 @@
 
 using Autofac;
 using System;
+using System.Collections.Concurrent;
 using System.Diagnostics;
 using System.Threading.Tasks;
 
@@ -10,30 +11,56 @@ public class CommandDispatcherAsync : ICommandDispatcherAsync
 {
     private readonly IComponentContext _context;
 
+    // Maintain dictionary of typeof ICommand<TResult> or ICommand and typeof ICommandHandlerAsync<,> key value pair
+    private readonly ConcurrentDictionary<Type, Type> _cache;
+
     public CommandDispatcherAsync(IComponentContext context)
     {
         _context = context ?? throw new ArgumentNullException(nameof(context));
+        _cache = new ConcurrentDictionary<Type, Type>();
     }
 
     public Task<TResult> DispatchAsync<TResult>(ICommand<TResult> cmd, CancellationToken cancellationToken = default)
     {
-        var type = typeof(ICommandHandlerAsync<,>).MakeGenericType(cmd.GetType(), typeof(TResult));
-        dynamic handler = _context.Resolve(type);
+        Type cmdType = cmd.GetType();
+        Type cmdHandlerType;
 
+        if (!_cache.ContainsKey(cmdType))
+        {
+            cmdHandlerType = typeof(ICommandHandlerAsync<,>).MakeGenericType(cmdType, typeof(TResult));
+            _ = _cache.TryAdd(cmdType, cmdHandlerType);
+        }
+        else
+        {
+            cmdHandlerType = _cache[cmdType];
+        }
+
+        dynamic handler = _context.Resolve(cmdHandlerType);
         dynamic arg = cmd;
-        var result = handler.HandleAsync(arg);
+        var taskResult = handler.HandleAsync(arg, cancellationToken);
 
-        return result;
+        return taskResult;
     }
 
     public Task DispatchAsync(ICommand cmd, CancellationToken cancellationToken = default)
     {
-        var type = typeof(ICommandHandlerAsync<>).MakeGenericType(cmd.GetType());
-        dynamic handler = _context.Resolve(type);
+        Type cmdType = cmd.GetType();
+        Type cmdHandlerType;
 
+        if (!_cache.ContainsKey(cmdType))
+        {
+            cmdHandlerType = typeof(ICommandHandlerAsync<>).MakeGenericType(cmdType);
+            _ = _cache.TryAdd(cmdType, cmdHandlerType);
+        }
+        else
+        {
+            cmdHandlerType = _cache[cmdType];
+        }
+
+        dynamic handler = _context.Resolve(cmdHandlerType);
         dynamic arg = cmd;
-        var result = handler.HandleAsync(arg);
+        var taskResult = handler.HandleAsync(arg, cancellationToken);
 
-        return result;
+        return taskResult;
     }
 }

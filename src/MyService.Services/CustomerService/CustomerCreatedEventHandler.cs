@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 [Service]
 public class CustomerCreatedEventHandler : IEventHandlerAsync<CustomerCreatedEvent, Customer>
 {
-    public Task HandleAsync(Customer arg)
+    public Task HandleAsync(Customer arg, CancellationToken token = default)
     {
         return Task.CompletedTask;
     }
