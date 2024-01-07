@@ -2,15 +2,24 @@
 
 using App.Core;
 using App.Core.Cqs;
-using MyService.Abstractions.Cqs.CustomerService;
+using MyService.Abstractions.Services.CustomerService;
 using MyService.Abstractions.Models;
 using System.Threading.Tasks;
+using MyService.Abstractions.Repositories;
+using MyService.Abstractions.Infrastructure.Database;
 
 [Service]
 public class CustomerQueryHandler : IQueryHandlerAsync<GetCustomerQuery, Customer>
 {
+    readonly ICustomerRepository _customerRepository;
+    public CustomerQueryHandler(ICustomerRepository customerRepository)
+    {
+        _customerRepository = customerRepository;
+    }
+
     public Task<Customer> HandleAsync(GetCustomerQuery query, CancellationToken token = default)
     {
-        return Task.FromResult(new Customer());
+        using var scope = new DbContextScope("0");
+        return _customerRepository.GetCustomerAsync(query.CustomerId, scope);
     }
 }

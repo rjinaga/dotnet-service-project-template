@@ -1,4 +1,4 @@
-﻿namespace MyService.Abstractions.Cqs.CustomerService;
+﻿namespace MyService.Abstractions.Services.CustomerService;
 
 using App.Core.Cqs;
 using MyService.Abstractions.Models;

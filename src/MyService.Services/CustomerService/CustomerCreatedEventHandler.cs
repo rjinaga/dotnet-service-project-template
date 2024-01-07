@@ -2,7 +2,7 @@
 
 using App.Core;
 using App.Core.Cqs;
-using MyService.Abstractions.Cqs.CustomerService;
+using MyService.Abstractions.Services.CustomerService;
 using MyService.Abstractions.Models;
 using System.Threading.Tasks;
 

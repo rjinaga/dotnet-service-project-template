@@ -7,7 +7,8 @@ using App.Core.Cqs;
 using MyService.Infrastructure;
 using MyService.Repository;
 using MyService.Services;
-
+using MyService.Abstractions.Infrastructure.Database;
+using MyService.Infrastructure.Database;
 
 internal static class ContainerSetup
 {
@@ -33,6 +34,10 @@ internal static class ContainerSetup
         builder.RegisterType<CommandDispatcherAsync>().As<ICommandDispatcherAsync>().SingleInstance();
         builder.RegisterType<CqDispatcher>().As<IDispatcher>().SingleInstance();
         builder.RegisterType<EventPublisherAsync>().As<IEventPublisherAsync>().SingleInstance();
+
+        // :Register db context provider
+        builder.Register<MyServiceDbContextProvider>(c => new MyServiceDbContextProvider(connectionString: "-- fetch from app settings--"))
+               .As<DbContextProvider>();
     }
 
     private static void RegisterAssembly(ContainerBuilder builder, Assembly assembly)
