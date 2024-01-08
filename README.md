@@ -188,4 +188,3 @@ public class CustomerController : ControllerBase
 * Make App.Core available as nuget library
 * Unit testing and integration testing
 * Improve documentation
-* Add a generic db context to communicate with database, and some most re-usable classes
