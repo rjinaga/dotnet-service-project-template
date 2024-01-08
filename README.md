@@ -93,9 +93,45 @@ namespace MyService.Services.CustomerService;
 [Service]
 public class CustomerQueryHandler : IQueryHandlerAsync<GetCustomerQuery, Customer>
 {
+    readonly ICustomerRepository _customerRepository;
+    public CustomerQueryHandler(ICustomerRepository customerRepository)
+    {
+        _customerRepository = customerRepository;
+    }
+
     public Task<Customer> HandleAsync(GetCustomerQuery query, CancellationToken token = default)
     {
-        throw new NotImplementedException();
+        using var scope = new DbContextScope("0");
+        return _customerRepository.GetCustomerAsync(query.CustomerId, scope);
+    }
+}
+```
+
+#### Repository Implementation
+```csharp
+namespace MyService.Repositories;
+...
+
+[Service]
+public class CustomerRepository : ICustomerRepository
+{
+    readonly DbContextProvider _dbContextProvider;
+    public CustomerRepository(DbContextProvider dbContextProvider)
+    {
+        _dbContextProvider = dbContextProvider;
+    }
+
+    public Task<Customer> GetCustomerAsync(int id, DbContextScope scope)
+    {
+        var dbContext = _dbContextProvider.GetOrCreateDbContext(scope);
+
+        // TODO: use db context to retrieve the data from generic set method
+        // use dbContext.Set<CustomerEntity>() as your db set object to perform CRUD operations
+
+        //var customer = await dbContext.Set<CustomerEntity>().Where(c => c.Id = id ).SingleOrDefaultAsync();
+        //return customer;
+
+        return Task.FromResult ( new Customer() );
     }
 }
 ```
