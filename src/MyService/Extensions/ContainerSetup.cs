@@ -37,7 +37,7 @@ internal static class ContainerSetup
 
     private static void RegisterDbContextProvider(ContainerBuilder builder)
     {
-        builder.Register<MyServiceDbContextProvider>(c => new MyServiceDbContextProvider(connectionString: "-- fetch from app settings--"))
+        builder.Register(c => new MyServiceDbContextProvider(connectionString: "-- fetch from app settings--"))
                .As<DbContextProvider>();
     }
 
