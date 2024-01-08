@@ -19,8 +19,10 @@ public class CustomerRepository : ICustomerRepository
     {
         var dbContext = _dbContextProvider.GetOrCreateDbContext(scope);
 
-        // TODO
-        // dbContext.Set<Customer>().Where(c => c.Id = id );
+        // TODO: use db context to retrieve the data from generic set method
+        // use dbContext.Set<CustomerEntity>() as your db set object to perform CRUD operations
+
+        // dbContext.Set<CustomerEntity>().Where(c => c.Id = id );
 
         return Task.FromResult ( new Customer() );
     }
