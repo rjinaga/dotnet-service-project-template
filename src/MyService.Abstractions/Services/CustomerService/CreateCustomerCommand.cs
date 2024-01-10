@@ -1,9 +1,9 @@
 ﻿namespace MyService.Abstractions.Services.CustomerService;
 
-using App.Core.Cqs;
+using App.Cqs;
 using MyService.Abstractions.Models;
 
-public record CustomerCommand (Customer Customer) : ICommand<int>
+public record CreateCustomerCommand (Customer Customer) : ICommand<int>
 {
     
 }

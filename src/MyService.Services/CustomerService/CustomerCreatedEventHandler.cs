@@ -1,7 +1,7 @@
 ﻿namespace MyService.Services.CustomerService;
 
-using App.Core;
-using App.Core.Cqs;
+using App.Cqs;
+using App.Cqs;
 using MyService.Abstractions.Services.CustomerService;
 using MyService.Abstractions.Models;
 using System.Threading.Tasks;

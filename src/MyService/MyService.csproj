@@ -12,7 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\App.Core\App.Core.csproj" />
     <ProjectReference Include="..\MyService.Infrastructure\MyService.Infrastructure.csproj" />
     <ProjectReference Include="..\MyService.Repositories\MyService.Repositories.csproj" />
     <ProjectReference Include="..\MyService.Services\MyService.Services.csproj" />

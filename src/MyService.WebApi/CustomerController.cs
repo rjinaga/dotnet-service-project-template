@@ -1,6 +1,6 @@
 ﻿namespace MyService.WebApi;
 
-using App.Core.Cqs;
+using App.Cqs;
 using Microsoft.AspNetCore.Mvc;
 using MyService.Abstractions.Services.CustomerService;
 using MyService.Abstractions.Models;
@@ -29,7 +29,7 @@ public class CustomerController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Create(Customer customer)   
     {
-        CustomerCommand command = new(customer);
+        CreateCustomerCommand command = new(customer);
         int id = await _dispatcher.DispatchAsync(command);
 
         return Created("", id);

@@ -1,5 +1,5 @@
 # dotnet-service-project-template
-.NET project structure or template to create well maintainable, clean and scalable microservice. This project structure uses only Autofac library (DI framework). This project structure can be used by replacing your desired name for your service. In the future, a shell script will be included to rescue the manual name changes.
+.NET project structure or template to create well maintainable, clean and scalable microservice. With this structure, entire hierarchy of objects can be developed as stateless. This project structure can be used by replacing your desired name for your service. 
 
 This project structure is built using following principles:
 * Dependency Inversion - High or low level modules don't depend on each other, all the concrete modules depend on abstraction module, and host module is responsible for assembling all the concrete modules.
@@ -23,7 +23,7 @@ Use command handler to perform an action and query handler for retrieving data.
 ```csharp
 namespace MyService.Abstractions.Cqs.CustomerService;
 
-public record CustomerCommand (Customer Customer) : ICommand<int>
+public record CreateCustomerCommand (Customer Customer) : ICommand<int>
 {
     
 }
@@ -36,13 +36,13 @@ namespace MyService.Services.CustomerService;
 [Service]
 public class CustomerCommandHandler : ICommandHandlerAsync<CustomerCommand, int>
 {
-    readonly IEventPublisherAsync _publisher;
-    public CustomerCommandHandler(IEventPublisherAsync publisher)
+    readonly IEventPublisher _publisher;
+    public CustomerCommandHandler(IEventPublisher publisher)
     {
         _publisher = publisher;
     }
 
-    public async Task<int> HandleAsync(CustomerCommand command, CancellationToken token = default)
+    public async Task<int> HandleAsync(CreateCustomerCommand command, CancellationToken token = default)
     {
         var customer = command.Customer;
 
@@ -91,7 +91,8 @@ public record GetCustomerQuery(int CustomerId) : IQuery<Customer>
 namespace MyService.Services.CustomerService;
 
 [Service]
-public class CustomerQueryHandler : IQueryHandlerAsync<GetCustomerQuery, Customer>
+public class CustomerQueryHandler : IQueryHandlerAsync<GetCustomerQuery, Customer> 
+//, IQueryHandlerAsync<GetCustomerListQuery, IList<Customer>>  // can be implemented multiple interfaces
 {
     readonly ICustomerRepository _customerRepository;
     public CustomerQueryHandler(ICustomerRepository customerRepository)
@@ -159,7 +160,7 @@ public class CustomerController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Create(Customer customer)   
     {
-        CustomerCommand command = new(customer);
+        CreateCustomerCommand command = new(customer);
         int id = await _dispatcher.DispatchAsync(command);
 
         return Created("", id);
@@ -181,10 +182,9 @@ public class CustomerController : ControllerBase
 #### Project Dependencies
 * ASP.NET Core 6.0
 * Autofac
-
+* [App.Cqs](https://github.com/rjinaga/App.Cqs)  ![NuGet Version](https://img.shields.io/nuget/v/App.Cqs)
 
 #### Roadmap
 * Create shell script to accepting few arguments to create a new project from this as a real template.
-* Make App.Core available as nuget library
 * Unit testing and integration testing
 * Improve documentation

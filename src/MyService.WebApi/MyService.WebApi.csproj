@@ -11,7 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\App.Core\App.Core.csproj" />
     <ProjectReference Include="..\MyService.Abstractions\MyService.Abstractions.csproj" />
   </ItemGroup>
 

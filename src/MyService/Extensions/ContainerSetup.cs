@@ -1,7 +1,7 @@
 ﻿
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
-using App.Core;
+using App.Cqs;
 using MyService.Infrastructure;
 using MyService.Repository;
 using MyService.Services;

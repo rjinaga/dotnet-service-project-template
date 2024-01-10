@@ -1,6 +1,6 @@
 ﻿namespace MyService.Repositories;
 
-using App.Core;
+using App.Cqs;
 using MyService.Abstractions.Infrastructure.Database;
 using MyService.Abstractions.Models;
 using MyService.Abstractions.Repositories;

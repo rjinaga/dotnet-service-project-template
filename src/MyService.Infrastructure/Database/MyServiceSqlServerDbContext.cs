@@ -1,6 +1,6 @@
 ﻿namespace MyService.Infrastructure.Database;
 
-using App.Core;
+using App.Cqs;
 using Microsoft.EntityFrameworkCore;
 using MyService.Abstractions.Entities;
 using MyService.Abstractions.Infrastructure.Database;
