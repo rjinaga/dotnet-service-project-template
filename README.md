@@ -182,7 +182,8 @@ public class CustomerController : ControllerBase
 #### Project Dependencies
 * ASP.NET Core 6.0
 * Autofac
-* [App.Cqs](https://github.com/rjinaga/App.Cqs)  ![NuGet Version](https://img.shields.io/nuget/v/App.Cqs)
+* [App.Cqs](https://github.com/rjinaga/App.Cqs)  
+[![NuGet Version](https://img.shields.io/nuget/v/App.Cqs)](https://www.nuget.org/packages/App.Cqs)
 
 #### Roadmap
 * Create shell script to accepting few arguments to create a new project from this as a real template.
