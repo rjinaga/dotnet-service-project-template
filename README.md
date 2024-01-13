@@ -102,7 +102,7 @@ public class CustomerQueryHandler : IQueryHandlerAsync<GetCustomerQuery, Custome
 
     public Task<Customer> HandleAsync(GetCustomerQuery query, CancellationToken token = default)
     {
-        using var scope = new DbContextScope("0");
+        using var scope = new DbContextScope(shardId: "0");
         return _customerRepository.GetCustomerAsync(query.CustomerId, scope);
     }
 }
